@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 #coding: utf-8
 from pwn import *
+import sys
 import re
 
 regex = sys.argv[2]
