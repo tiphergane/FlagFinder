@@ -10,10 +10,11 @@ def Exploit():
     info("Opening file: %s\n" % file)
     f = read(file)
     c = re.findall(regex,str(f))
-    if str(c):
-        info("Yeah !!!! flag founded: %s\n" % c)
+    if not str(c):
+        info("Too Bad my friend !!!")
     else:
-        warn("Too bad my friend")
+        for a in c:
+            info("Yeah !!!! flag founded: %s\n" % c)
 
 def failExploit():
     warn("Failled to open file %s" % file)
