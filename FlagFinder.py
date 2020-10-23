@@ -16,7 +16,7 @@ def Exploit():
         warn("Too bad my friend")
 
 def failExploit():
-    warn("Failled to open file %s" file)
+    warn("Failled to open file %s" % file)
 
 try:
     Exploit()
