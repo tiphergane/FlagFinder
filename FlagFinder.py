@@ -15,7 +15,7 @@ def Exploit():
         info("Too Bad my friend !!!")
     else:
         for a in c:
-            info("Yeah !!!! flag founded: %s\n" % c)
+            info("Yeah !!!! flag found: %s\n" % c)
 
 def failExploit():
     warn("Failed to open file %s" % file)
