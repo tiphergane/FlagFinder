@@ -17,7 +17,7 @@ def Exploit():
             info("Yeah !!!! flag founded: %s\n" % c)
 
 def failExploit():
-    warn("Failled to open file %s" % file)
+    warn("Failed to open file %s" % file)
 
 try:
     Exploit()
