@@ -15,12 +15,12 @@ def Exploit():
     else:
         warn("Too bad my friend")
 
-def ArgMissing():
-    warn("Missing arguments, please use %s target \"Flag pattern\"" % sys.argv[0])
+def failExploit():
+    warn("Failled to open file %s" file)
 
 try:
     Exploit()
 except:
-    ArgMissing()
+    failExploit()
 finally:
     sys.exit()
