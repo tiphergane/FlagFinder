@@ -10,7 +10,7 @@ file = sys.argv[1]
 def Exploit():
     info("Opening file: %s\n" % file)
     f = read(file)
-    info("Searching for patter: %s\n" % regex)
+    info("Searching for pattern: %s\n" % regex)
     c = re.findall(regex,str(f))
     if not str(c):
         info("Too Bad my friend !!!")
