@@ -12,6 +12,7 @@ def Exploit():
     f = read(file)
     info("Searching for pattern: %s\n" % regex)
     c = re.findall(regex,str(f))
+    f.close()
     if not str(c):
         info("Too Bad my friend !!!")
     else:
