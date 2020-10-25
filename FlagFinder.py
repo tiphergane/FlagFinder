@@ -26,4 +26,5 @@ try:
 except:
     failExploit()
 finally:
+    info("Goodbye Professor")
     sys.exit()
