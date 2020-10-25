@@ -17,6 +17,10 @@ def Exploit():
     else:
         for a in c:
             success("Yeah !!!! flag found: %s\n" % a)
+            success("flag is now copied in flag.txt")
+            f = open("flag.txt","w")
+            f.write(a)
+            f.close()
 
 def failExploit():
     warn("Failed to open file %s" % file)
@@ -26,5 +30,5 @@ try:
 except:
     failExploit()
 finally:
-    info("Goodbye Professor")
+    info("Goodbye Professor !")
     sys.exit()
