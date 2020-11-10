@@ -10,19 +10,16 @@ file = sys.argv[1]
 
 def Exploit():
     info("Opening file: %s\n" % file)
-    f = read(file)
+    s = read(file)
     info("Searching for pattern: %s\n" % regex)
-    c = re.findall(regex, str(f))
+    c = re.findall(regex, str(s))
     if not str(c):
         info("Too Bad my friend !!!")
     else:
         for a in c:
             success("Yeah !!!! flag found: %s\n" % a)
             warn("flag is now copied in flag.txt")
-            f = open("flag.txt", "w")
-            f.write(a)
-            f.close()
-
+            write("flag.txt",a)
 
 def failExploit():
     warn("Failed to open file %s" % file)
