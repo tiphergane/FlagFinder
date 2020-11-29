@@ -5,12 +5,10 @@ import sys
 import re
 
 
-regex = sys.argv[2]
-file = sys.argv[1]
-prog = sys.argv[0]
-
-
 def Exploit():
+    regex = sys.argv[2]
+    file = sys.argv[1]
+    prog = sys.argv[0]
     info("Opening file: %s\n" % file)
     s = read(file)
     info("Searching for pattern: %s\n" % regex)
@@ -25,7 +23,7 @@ def Exploit():
 
 
 def failExploit():
-    error("An error occured")
+    error("An error occure")
 
 
 if len(sys.argv) != 3:
