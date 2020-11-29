@@ -4,11 +4,11 @@ from pwn import *
 import sys
 import re
 
-regex = sys.argv[2]
-file = sys.argv[1]
-
 
 def Exploit():
+    regex = sys.argv[2]
+    file = sys.argv[1]
+    prog = sys.argv[0]
     info("Opening file: %s\n" % file)
     s = read(file)
     info("Searching for pattern: %s\n" % regex)
@@ -19,11 +19,16 @@ def Exploit():
         for a in c:
             success("Yeah !!!! flag found: %s\n" % a)
             warn("flag is now copied in flag.txt")
-            write("flag.txt",a)
+            write("flag.txt", a)
+
 
 def failExploit():
-    warn("Failed to open file %s" % file)
+    error("An error occure")
 
+
+if len(sys.argv) != 3:
+    warn('Usage: python FlagFinder.py file "pattern"')
+    sys.exit()
 
 try:
     Exploit()
