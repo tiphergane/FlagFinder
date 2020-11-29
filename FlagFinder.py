@@ -23,7 +23,7 @@ def Exploit():
 
 
 def failExploit():
-    error("An error occure")
+    error("An error occured")
 
 
 if len(sys.argv) != 3:
