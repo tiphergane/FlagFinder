@@ -5,10 +5,12 @@ import sys
 import re
 
 
+prog = sys.argv[0]
+
+
 def Exploit():
     regex = sys.argv[2]
     file = sys.argv[1]
-    prog = sys.argv[0]
     info("Opening file: %s\n" % file)
     s = read(file)
     info("Searching for pattern: %s\n" % regex)
@@ -27,7 +29,7 @@ def failExploit():
 
 
 if len(sys.argv) != 3:
-    warn('Usage: python FlagFinder.py file "pattern"')
+    warn('Usage: python %s file "pattern"' % prog)
     sys.exit()
 
 try:
