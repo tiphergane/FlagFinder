@@ -29,7 +29,11 @@ def failExploit():
 
 
 if len(sys.argv) != 3:
-    pwn.warn('Usage: python %s file "pattern"' % prog)
+    pwn.warn(
+        "Usage: {program} {file} {regex}".format(
+            program=sys.argv[0], file="cible", regex="flag{.*?}"
+        )
+    )
     sys.exit()
 
 try:
