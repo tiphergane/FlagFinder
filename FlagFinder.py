@@ -37,7 +37,7 @@ try:
 except IOError:
     pwn.error("Impossible d'ouvrir le fichier %s", sys.argv[1])
 except TypeError:
-    pwn.error("Merci de mettre votre %s entre parenthèses", sys.argv[2])
+    pwn.error("Merci de mettre votre %s entre guillemets", sys.argv[2])
 except:
     failExploit()
 finally:
