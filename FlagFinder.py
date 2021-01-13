@@ -11,15 +11,15 @@ prog = sys.argv[0]
 def Exploit():
     regex = sys.argv[2]
     file = sys.argv[1]
-    pwn.info("Opening file: %s\n" % file)
+    pwn.info("Opening file: {fichier}\n".format(fichier=file))
     s = pwn.read(file)
-    pwn.info("Searching for pattern: %s\n" % regex)
+    pwn.info("Searching for pattern: {flag}\n".format(flag=regex))
     c = re.findall(regex, str(s))
     if not str(c):
         pwn.info("Too Bad my friend !!!")
     else:
         for a in c:
-            pwn.success("Yeah !!!! flag found: %s\n" % a)
+            pwn.success("Yeah !!!! flag found: {result}\n".format(result=a))
             pwn.warn("flag is now copied in flag.txt")
             pwn.write("flag.txt", a)
 
