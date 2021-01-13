@@ -39,7 +39,7 @@ if len(sys.argv) != 3:
 try:
     Exploit()
 except IOError:
-    pwn.error("Impossible d'ouvrir le fichier %s", sys.argv[1])
+    pwn.error("Impossible d'ouvrir le fichier {file}".format(file=sys.argv[1]))
 except:
     failExploit()
 finally:
