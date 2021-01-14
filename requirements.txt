@@ -1,1 +1,2 @@
-pwntools==4.2.2
+pwntools
+regex
