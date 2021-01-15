@@ -16,7 +16,7 @@ and that's mostly enough
 In your terminal, type the following command, adjust **source_file** and **Flag_pattern** to your needs
 A copy of the flag is stored in the flag.txt file.
 
-**ATTENTION** Flag_pattern **MUST** be surrounded by ", or script will crash.
+**ATTENTION** in **ZSH** Flag_pattern **MUST** be surrounded by ", or script will crash.
 
 > python3 FlagFinder.py source_file Flag_pattern
 
