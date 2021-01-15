@@ -15,8 +15,8 @@ def Exploit():
     s = pwn.read(file)
     pwn.info("Searching for pattern: {flag}\n".format(flag=regex))
     c = re.findall(regex, str(s))
-    if not str(c):
-        pwn.info("Too Bad my friend !!!")
+    if not c:
+        pwn.warn("No flag for you my friend, check your regex")
     else:
         for a in c:
             pwn.success("Yeah !!!! flag found: {result}\n".format(result=a))
