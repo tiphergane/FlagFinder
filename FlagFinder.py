@@ -40,6 +40,8 @@ try:
     Exploit()
 except IOError:
     pwn.error("Impossible d'ouvrir le fichier {file}".format(file=sys.argv[1]))
+except KeyboardInterrupt:
+    pwn.info("Canceled by user (CTRL-C)")
 except:
     failExploit()
 finally:
