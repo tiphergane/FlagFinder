@@ -18,7 +18,11 @@ A copy of the flag is stored in the flag.txt file.
 
 **ATTENTION** in **ZSH** Flag_pattern **MUST** be surrounded by ", or script will crash.
 
-> python3 FlagFinder.py source_file Flag_pattern
+> python3 FlagFinder.py -f source_file -r Flag_pattern
+
+or
+
+> python3 FlagFinder.py --file source_file --regex Flag_pattern
 
 ![](./example.png "Usage example")
 
