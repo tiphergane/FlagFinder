@@ -35,6 +35,7 @@ if __name__ == "__main__":
         "--file",
         dest="fichier",
         help="Fichier à vérifier",
+        required=True,
     )
     parser.add_argument(
         "-r",
@@ -48,7 +49,8 @@ if __name__ == "__main__":
     pattern = args.pattern
     try:
         Exploit(fichier, pattern)
-    except:
+    except TypeError:
+        pwn.warn("File Argument is missing")
         failExploit()
     finally:
         pwn.info("Goodbye Professor !")
