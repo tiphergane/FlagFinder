@@ -41,7 +41,7 @@ if __name__ == "__main__":
         "-r",
         "--regex",
         dest="pattern",
-        help="Pattern a chercher",
+        help="Pattern à chercher",
         default="FLAG{.*?}",
     )
     args = parser.parse_args()
