@@ -41,7 +41,7 @@ if __name__ == "__main__":
         "-r",
         "--regex",
         dest="pattern",
-        help="Pattern à chercher",
+        help="Pattern à chercher, par dafaut FLAG{.*?}",
         default="FLAG{.*?}",
     )
     args = parser.parse_args()
@@ -49,8 +49,5 @@ if __name__ == "__main__":
     pattern = args.pattern
     try:
         Exploit(fichier, pattern)
-    except TypeError:
-        pwn.warn("File Argument is missing")
-        failExploit()
     finally:
         pwn.info("Goodbye Professor !")
