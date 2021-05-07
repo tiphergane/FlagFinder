@@ -49,8 +49,5 @@ if __name__ == "__main__":
     pattern = args.pattern
     try:
         Exploit(fichier, pattern)
-    except TypeError:
-        pwn.warn("File Argument is missing")
-        failExploit()
     finally:
         pwn.info("Goodbye Professor !")
