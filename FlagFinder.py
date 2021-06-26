@@ -4,6 +4,7 @@
 import pwn
 import argparse
 import re
+import requests
 
 
 def Exploit(fichier, pattern):
@@ -12,6 +13,24 @@ def Exploit(fichier, pattern):
     pwn.info("Opening file: {fichier}\n".format(fichier=file))
     s = pwn.read(file)
     pwn.info("Searching for pattern: {flag}\n".format(flag=regex))
+    c = re.findall(regex, str(s))
+    if not c:
+        pwn.warn("No flag for you my friend, check your regex")
+    else:
+        for a in c:
+            pwn.success("Yeah !!!! flag found: {result}\n".format(result=a))
+            pwn.warn("flag is now copied in flag.txt")
+            pwn.write("flag.txt", a)
+
+
+def Online(url, pattern):
+    regex = pattern
+    file = url
+    pwn.info("Opening file: {fichier}\n".format(fichier=file))
+    r = requests.session()
+    s = r.get(file)
+    s = s.content
+    pwn.info("Search for pattern: {flag}\n".format(flag=regex))
     c = re.findall(regex, str(s))
     if not c:
         pwn.warn("No flag for you my friend, check your regex")
@@ -35,7 +54,21 @@ if __name__ == "__main__":
         "--file",
         dest="fichier",
         help="Fichier à vérifier",
-        required=True,
+        # required=True,
+    )
+    parser.add_argument(
+        "-u",
+        "--url",
+        dest="fichier",
+        help="Lien vers le fichier",
+    )
+    parser.add_argument(
+        "-o",
+        "--online",
+        help="Déclare si nous passons en mode en ligne",
+        dest="isOnline",
+        action="store_true",
+        default=False,
     )
     parser.add_argument(
         "-r",
@@ -47,7 +80,8 @@ if __name__ == "__main__":
     args = parser.parse_args()
     fichier = args.fichier
     pattern = args.pattern
-    try:
+    if args.isOnline:
+        Online(fichier, pattern)
+
+    else:
         Exploit(fichier, pattern)
-    finally:
-        pwn.info("Goodbye Professor !")
